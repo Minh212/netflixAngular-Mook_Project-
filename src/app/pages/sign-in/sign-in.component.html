@@ -1,0 +1,30 @@
+<body>
+  <div class="login">
+    <h1 class="login__title">Sign In</h1>
+    <div class="login__group">
+      <label for="email-input" class="login__group__label">Email or Phone Number</label>
+      <input id="email-input" class="login__group__input" type="text" required [(ngModel)]="email" name="email" />
+    </div>
+    <div class="error-message"  style="color: red;" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <div class="login__group">
+      <label for="password-input" class="login__group__label">Password</label>
+      <input id="password-input" class="login__group__input" type="password" required [(ngModel)]="password" name="password" />
+    </div>
+    <div class="error-message"  style="color: red;" *ngIf="errorMessage2">{{ errorMessage2 }}</div>
+    <br>
+    <button class="login__demo-account" type="button" (click)="fillDemoAccount()">Demo Account</button>
+    <button class="login__sign-in" type="button" (click)="onSubmit()">Sign In</button>
+    <div class="login__secondary-cta">
+      <a class="login__secondary-cta__text" href="#">Remember me</a>
+      <a class="login__secondary-cta__text login__secondary-cta__text--need-help" href="#">Need help?</a>
+    </div>
+    <label style="display: block; margin-top: 20px; color: silver;">New to Netflix? <a href="#" style="color: white; text-decoration: underline; font-weight: bold;">Sign up now.</a></label>
+    <label style="display: block; margin-top: 20px; color: silver;">This page is protected by <a href="#" style="color: white; text-decoration: underline;">Google reCAPTCHA</a> to ensure you're not a bot.
+      <a href="#" style="color: #0071eb; text-decoration: underline; font-weight: bold;">Learn more.</a>
+    </label>
+  </div>
+  
+</body>
+
+
