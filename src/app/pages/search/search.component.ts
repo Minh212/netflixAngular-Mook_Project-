@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl,FormGroup} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MovieApiServiceService } from 'src/app/service/movie-api-service.service';
-import { Title,Meta } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
+import { debounceTime } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-search',
@@ -10,26 +12,29 @@ import { Title,Meta } from '@angular/platform-browser';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private service:MovieApiServiceService,private title:Title,private meta:Meta) {
+  constructor(private service: MovieApiServiceService, private title: Title, private meta: Meta) {
     this.title.setTitle('Netflix - Search Movies');
-    this.meta.updateTag({name:'description',content:'Search Here Movies Like Avatar War etc'});
-   }
-
-  ngOnInit(): void {
+    this.meta.updateTag({ name: 'description', content: 'Search Here Movies Like Avatar War etc' });
   }
 
-  searchResult:any;
+  ngOnInit(): void {
+    this.searchForm.get('movieName')?.valueChanges.pipe(debounceTime(300)).subscribe(() => {
+      this.submitForm();
+    });
+  }
+
+
+  searchResult: any;
   searchForm = new FormGroup({
-    'movieName':new FormControl(null)
+    'movieName': new FormControl(null)
   });
 
-  submitForm()
-  {
-      console.log(this.searchForm.value,'searchform#');
-      this.service.getSearchMovie(this.searchForm.value).subscribe((result)=>{
-          console.log(result,'searchmovie##');
-          this.searchResult = result.results;
-      });
+  submitForm() {
+    console.log(this.searchForm.value, 'searchform#');
+    this.service.getSearchMovie(this.searchForm.value).subscribe((result) => {
+      console.log(result, 'searchmovie##');
+      this.searchResult = result.results;
+    });
   }
 
 }
