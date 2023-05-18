@@ -12,7 +12,7 @@ import { MovieApiServiceService } from './service/movie-api-service.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './pages/sign-in/sign-in.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
