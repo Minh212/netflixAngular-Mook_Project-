@@ -24,3 +24,14 @@ a:hover{
     color: #ffffff;
     border: 2px solid #ffffff;
 }
+
+.navbar .navbar-brand
+{
+    color: #E50914;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link
+{
+    color: #E50914;
+}

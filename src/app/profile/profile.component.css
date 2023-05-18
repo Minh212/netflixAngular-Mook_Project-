@@ -1,31 +1,19 @@
-.profile-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f6d365;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), red);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), red)
 }
 
-.profile-picture-img {
-    width: 200px;
-    height: auto;
-    border-radius: 100%;
+.navbar .navbar-brand {
+    color: #E50914;
+    font-weight: bold;
 }
 
-.profile-details {
-    margin-top: 20px;
-}
-
-.profile-details p {
-    margin-left: 10px;
-}
-
-.profile-details img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-}
-
-.profile {
-    background-color: white;
+.navbar-nav .nav-item .nav-link {
+    color: #E50914;
 }
