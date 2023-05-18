@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
   email: string = 'demo@example.com';
+  password: string = 'demopassword';
   profilePictures: string[] = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/640px-Donald_Trump_official_portrait.jpg'
   ];
