@@ -14,6 +14,9 @@
     </div>
   </div>
 </nav>
+<app-loading *ngIf="isLoading" style="display: block;"></app-loading>
+<!-- Rest of your code -->
+
 <!-- navbar end  -->
 <div class="contain mt-5 p-5">
   <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
