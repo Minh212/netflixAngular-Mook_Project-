@@ -9,7 +9,7 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  isLoading: boolean = false;
+  isLoading: boolean = true; // Set isLoading to true initially
   getMovieDetailResult: any;
   getMovieVideoResult: any;
   getMovieCastResult: any;
@@ -26,29 +26,27 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   getMovie(id: any) {
-    this.isLoading = true;
     this.service.getMovieDetails(id).subscribe(async (result) => {
       console.log(result, 'getmoviedetails#');
       this.getMovieDetailResult = await result;
 
-      // updatetags
+      // Update tags
       this.title.setTitle(`${this.getMovieDetailResult.original_title} | ${this.getMovieDetailResult.tagline}`);
       this.meta.updateTag({ name: 'title', content: this.getMovieDetailResult.original_title });
       this.meta.updateTag({ name: 'description', content: this.getMovieDetailResult.overview });
 
-      // facebook
+      // Facebook
       this.meta.updateTag({ property: 'og:type', content: "website" });
       this.meta.updateTag({ property: 'og:url', content: `` });
       this.meta.updateTag({ property: 'og:title', content: this.getMovieDetailResult.original_title });
       this.meta.updateTag({ property: 'og:description', content: this.getMovieDetailResult.overview });
       this.meta.updateTag({ property: 'og:image', content: `https://image.tmdb.org/t/p/original/${this.getMovieDetailResult.backdrop_path}` });
 
-      this.isLoading = false;
+      this.isLoading = false; // Set isLoading to false after the movie details are loaded
     });
   }
 
   getVideo(id: any) {
-    this.isLoading = true;
     this.service.getMovieVideo(id).subscribe((result) => {
       console.log(result, 'getMovieVideo#');
       result.results.forEach((element: any) => {
@@ -56,16 +54,13 @@ export class MovieDetailsComponent implements OnInit {
           this.getMovieVideoResult = element.key;
         }
       });
-      this.isLoading = false;
     });
   }
 
   getMovieCast(id: any) {
-    this.isLoading = true;
     this.service.getMovieCast(id).subscribe((result) => {
       console.log(result, 'movieCast#');
       this.getMovieCastResult = result.cast;
-      this.isLoading = false;
     });
   }
 }

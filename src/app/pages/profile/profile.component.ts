@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  isLoading: boolean = true; // Add the isLoading property
+  isLoading: boolean = true; // Set isLoading to true initially
 
   email: string = 'demo@example.com';
   password: string = 'demopassword';
@@ -20,11 +20,12 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectRandomProfilePicture();
-    this.isLoading = false; // Set isLoading to false after loading is complete
   }
 
   selectRandomProfilePicture() {
+    this.isLoading = true; // Set isLoading to true before loading
     const randomIndex = Math.floor(Math.random() * this.profilePictures.length);
     this.selectedProfilePicture = this.profilePictures[randomIndex];
+    this.isLoading = false; // Set isLoading to false after loading is complete
   }
 }

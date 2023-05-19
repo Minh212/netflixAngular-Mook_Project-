@@ -62,3 +62,20 @@
 {
     color: #E50914;
 }
+.rowposter {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 20px; /* Add some bottom padding for better visibility */
+    scrollbar-width: thin; /* Add scrollbar styling (optional) */
+    scrollbar-color: #E50914 transparent; /* Add scrollbar styling (optional) */
+  }
+  
+  .rowimg {
+    /* Remove the margin-right property to prevent unnecessary spacing */
+    margin-right: 0;
+  }
+  
+  
+  
+  
