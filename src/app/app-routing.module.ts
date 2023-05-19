@@ -6,11 +6,13 @@ import { SearchComponent } from './pages/search/search.component';
 import { SigninComponent } from './pages/sign-in/sign-in.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthGuard } from './auth.guard';
+import { ActorComponent } from './pages/actor/actor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'movie/:id', component: MovieDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'actor/:id', component: ActorComponent, canActivate: [AuthGuard] },
   { path: 'signIn', component: SigninComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }
 ];

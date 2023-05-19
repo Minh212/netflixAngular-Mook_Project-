@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './pages/sign-in/sign-in.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoadingComponent } from './pages/loading/loading.component';
+import { ActorComponent } from './pages/actor/actor.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoadingComponent } from './pages/loading/loading.component';
     MovieDetailsComponent,
     SigninComponent,
     ProfileComponent,
-    LoadingComponent
+    LoadingComponent,
+    ActorComponent
   ],
   imports: [
     BrowserModule,
