@@ -1,21 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+  isLoading: boolean = true; // Add the isLoading property
+
   email: string = 'demo@example.com';
   password: string = 'demopassword';
-  
+
   profilePictures: string[] = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/640px-Donald_Trump_official_portrait.jpg'
   ];
   selectedProfilePicture: string = '';
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
     this.selectRandomProfilePicture();
+    this.isLoading = false; // Set isLoading to false after loading is complete
   }
 
   selectRandomProfilePicture() {

@@ -8,11 +8,11 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  loading: boolean = true; // Corrected property name
 
   constructor(private service: MovieApiServiceService, private title: Title, private meta: Meta) {
     this.title.setTitle('Netflix - Watch Movie');
     this.meta.updateTag({ name: 'description', content: 'Wtch Online Movies' });
-
   }
 
   bannerResult: any = [];
@@ -26,86 +26,49 @@ export class HomeComponent implements OnInit {
   thrillerMovieResult: any = [];
 
   ngOnInit(): void {
-    this.bannerData();
-    this.trendingData();
-    this.actionMovie();
-    this.adventureMovie();
-    this.comedyMovie();
-    this.animationMovie();
-    this.documentaryMovie();
-    this.sciencefictionMovie();
-    this.thrillerMovie();
+    this.loadData();
   }
 
+  loadData(): void {
+    this.loading = true; // Set loading to true before making API calls
 
-  // bannerdata
-  bannerData() {
     this.service.bannerApiData().subscribe((result) => {
       console.log(result, 'bannerresult#');
       this.bannerResult = result.results;
     });
-  }
 
-  trendingData() {
     this.service.trendingMovieApiData().subscribe((result) => {
       console.log(result, 'trendingresult#');
       this.trendingMovieResult = result.results;
-      // this.trendingMovieResult
     });
-  }
 
-  // action 
-  actionMovie() {
     this.service.fetchActionMovies().subscribe((result) => {
       this.actionMovieResult = result.results;
     });
-  }
 
-
-
-
-  // adventure 
-  adventureMovie() {
     this.service.fetchAdventureMovies().subscribe((result) => {
       this.adventureMovieResult = result.results;
     });
-  }
 
-
-  // animation 
-  animationMovie() {
     this.service.fetchAnimationMovies().subscribe((result) => {
       this.animationMovieResult = result.results;
     });
-  }
 
-
-  // comedy 
-  comedyMovie() {
     this.service.fetchComedyMovies().subscribe((result) => {
       this.comedyMovieResult = result.results;
     });
-  }
 
-  // documentary 
-  documentaryMovie() {
     this.service.fetchDocumentaryMovies().subscribe((result) => {
       this.documentaryMovieResult = result.results;
     });
-  }
 
-
-  // science-fiction 
-  sciencefictionMovie() {
     this.service.fetchScienceFictionMovies().subscribe((result) => {
       this.sciencefictionMovieResult = result.results;
     });
-  }
 
-  // thriller
-  thrillerMovie() {
     this.service.fetchThrillerMovies().subscribe((result) => {
       this.thrillerMovieResult = result.results;
+      this.loading = false; // Set loading to false after data is loaded
     });
   }
 
