@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieApiServiceService } from 'src/app/service/movie-api-service.service';
-import { Title,Meta } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +9,11 @@ import { Title,Meta } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private service: MovieApiServiceService,private title:Title,private meta:Meta) {
+  constructor(private service: MovieApiServiceService, private title: Title, private meta: Meta) {
     this.title.setTitle('Netflix - Watch Movie');
-    this.meta.updateTag({name:'description',content:'Wtch Online Movies'});
-    
-   }
+    this.meta.updateTag({ name: 'description', content: 'Wtch Online Movies' });
+
+  }
 
   bannerResult: any = [];
   trendingMovieResult: any = [];
