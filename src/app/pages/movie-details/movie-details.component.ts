@@ -60,6 +60,15 @@ export class MovieDetailsComponent implements OnInit {
   getMovieCast(id: any) {
     this.service.getMovieCast(id).subscribe((result) => {
       console.log(result, 'movieCast#');
+      result.cast.sort((a: { name: number; },b: { name: number; })=>{
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })
       this.getMovieCastResult = result.cast;
     });
   }
