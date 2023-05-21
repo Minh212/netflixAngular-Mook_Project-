@@ -13,6 +13,7 @@ export class MovieDetailsComponent implements OnInit {
   getMovieDetailResult: any;
   getMovieVideoResult: any;
   getMovieCastResult: any;
+  isSorted: boolean = false;
 
   constructor(private service: MovieApiServiceService, private router: ActivatedRoute, private title: Title, private meta: Meta) { }
 
@@ -31,16 +32,16 @@ export class MovieDetailsComponent implements OnInit {
       this.getMovieDetailResult = await result;
 
       // Update tags
-      this.title.setTitle(`${this.getMovieDetailResult.original_title} | ${this.getMovieDetailResult.tagline}`);
-      this.meta.updateTag({ name: 'title', content: this.getMovieDetailResult.original_title });
-      this.meta.updateTag({ name: 'description', content: this.getMovieDetailResult.overview });
+      // this.title.setTitle(`${this.getMovieDetailResult.original_title} | ${this.getMovieDetailResult.tagline}`);
+      // this.meta.updateTag({ name: 'title', content: this.getMovieDetailResult.original_title });
+      // this.meta.updateTag({ name: 'description', content: this.getMovieDetailResult.overview });
 
-      // Facebook
-      this.meta.updateTag({ property: 'og:type', content: "website" });
-      this.meta.updateTag({ property: 'og:url', content: `` });
-      this.meta.updateTag({ property: 'og:title', content: this.getMovieDetailResult.original_title });
-      this.meta.updateTag({ property: 'og:description', content: this.getMovieDetailResult.overview });
-      this.meta.updateTag({ property: 'og:image', content: `https://image.tmdb.org/t/p/original/${this.getMovieDetailResult.backdrop_path}` });
+      // // Facebook
+      // this.meta.updateTag({ property: 'og:type', content: "website" });
+      // this.meta.updateTag({ property: 'og:url', content: `` });
+      // this.meta.updateTag({ property: 'og:title', content: this.getMovieDetailResult.original_title });
+      // this.meta.updateTag({ property: 'og:description', content: this.getMovieDetailResult.overview });
+      // this.meta.updateTag({ property: 'og:image', content: `https://image.tmdb.org/t/p/original/${this.getMovieDetailResult.backdrop_path}` });
 
       this.isLoading = false; // Set isLoading to false after the movie details are loaded
     });
@@ -60,16 +61,21 @@ export class MovieDetailsComponent implements OnInit {
   getMovieCast(id: any) {
     this.service.getMovieCast(id).subscribe((result) => {
       console.log(result, 'movieCast#');
-      result.cast.sort((a: { name: number; },b: { name: number; })=>{
-        if (a.name < b.name) {
-          return -1;
-        }
-        if (a.name > b.name) {
-          return 1;
-        }
-        return 0;
-      })
       this.getMovieCastResult = result.cast;
     });
+  }
+  sortActor(){
+        if(this.isSorted){
+          this.getMovieCastResult.sort((a: { name: number; },b: { name: number; })=>{
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          })
+        }
+        this.isSorted = !this.isSorted;
   }
 }

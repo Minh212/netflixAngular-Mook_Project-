@@ -13,6 +13,7 @@ export class ActorComponent implements OnInit {
   }
 
   getActorDetailResult: any;
+  getMovieCastResult: any;
 
   ngOnInit(): void {
     let getParamId = this.router.snapshot.paramMap.get('id');
@@ -23,5 +24,12 @@ export class ActorComponent implements OnInit {
     this.service.getActorDetails(id).subscribe(async(result)=>{
       this.getActorDetailResult = await result;
     })
+  }
+
+  getMovieCast(id: any) {
+    this.service.getMovieCast(id).subscribe((result) => {
+      console.log(result, 'movieCast#');
+      this.getMovieCastResult = result.cast;
+    });
   }
 }
