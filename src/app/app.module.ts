@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './pages/sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TvShowComponent } from './tv-show/tv-show.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
     SearchComponent,
     MovieDetailsComponent,
     SigninComponent,
-    ProfileComponent
+    ProfileComponent,
+    TvShowComponent
   ],
   imports: [
     BrowserModule,

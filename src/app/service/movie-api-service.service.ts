@@ -25,6 +25,11 @@ export class MovieApiServiceService {
     return this.http.get(`${this.baseurl}/trending/movie/day?api_key=${this.apikey}`);
   }
 
+  // trendingTVShow api data
+  trendingTVShow(): Observable<any> {
+    return this.http.get(`${this.baseurl}/trending/tv/day?api_key=${this.apikey}`);
+  }
+
   // searchmovive
   getSearchMovie(data: any): Observable<any> {
     console.log(data, 'movie#');
@@ -81,5 +86,22 @@ export class MovieApiServiceService {
   fetchThrillerMovies(): Observable<any> {
     return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`);
   }
+
+  //get Tv Shows
+  getTVShowList(): Observable<any> {
+    return this.http.get(`${this.baseurl}/discover/tv?api_key=${this.apikey}`);
+  }
+
+getAiring(): Observable<any> {
+  return this.http.get(`${this.baseurl}/tv/airing_today?api_key=${this.apikey}`);
+}
+
+getPopularTV(): Observable<any> {
+  return this.http.get(`${this.baseurl}/tv/popular?api_key=${this.apikey}`);
+}
+
+getTopRatedTV(): Observable<any> {
+  return this.http.get(`${this.baseurl}/tv/top_rated?api_key=${this.apikey}`);
+}
 
 }

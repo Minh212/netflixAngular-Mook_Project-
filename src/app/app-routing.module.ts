@@ -5,13 +5,15 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { SearchComponent } from './pages/search/search.component';
 import {SigninComponent} from'./pages/sign-in/sign-in.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TvShowComponent } from './tv-show/tv-show.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'search',component:SearchComponent},
   {path:'movie/:id',component:MovieDetailsComponent},
   {path:'signIn',component:SigninComponent},
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  {path:'tvshows', component:TvShowComponent}
 ];
 
 @NgModule({
