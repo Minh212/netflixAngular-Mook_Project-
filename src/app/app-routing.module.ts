@@ -26,9 +26,9 @@ const routes: Routes = [
   { path: 'tv-shows/airing-today', component: AiringTvShowComponent, canActivate: [AuthGuard]},
   { path: 'tv-shows/top-rated', component: TopRatedTvShowComponent, canActivate: [AuthGuard]},
   {path:'movies', component: PopularMovieComponent, canActivate: [AuthGuard]},
-  {path:'playing-now', component: NowPlayingComponent, canActivate: [AuthGuard]},
-  {path:'top-rated', component: TopRatedComponent, canActivate: [AuthGuard]},
-  {path:'upcoming', component: UpcomingComponent, canActivate: [AuthGuard]},
+  {path:'movies/playing-now', component: NowPlayingComponent, canActivate: [AuthGuard]},
+  {path:'movies/top-rated', component: TopRatedComponent, canActivate: [AuthGuard]},
+  {path:'movies/upcoming', component: UpcomingComponent, canActivate: [AuthGuard]},
 
 ];
 

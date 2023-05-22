@@ -1,6 +1,6 @@
 
 <!-- navbar start  -->
-<nav class="navbar navbar-expand-lg fixed-top" >
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">Netflix FA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -12,18 +12,18 @@
         <li class="dropdown nav-item">
           <button class="dropbtn">TV Shows</button>
           <div class="dropdown-content">
-            <a  class="nav-link" routerLink="tv-shows/airing-today">Airing Today</a>
-            <a  class="nav-link" routerLink="tv-shows/popular">Popular</a>
-            <a  class="nav-link" routerLink="tv-shows/top-rated">Top Rated</a>
+            <a  class="nav-link" [routerLink]="['','tv-shows','airing-today']">Airing Today</a>
+            <a  class="nav-link" [routerLink]="['','tv-shows','popular']">Popular</a>
+            <a  class="nav-link" [routerLink]="['','tv-shows','top-rated']">Top Rated</a>
           </div>
         </li>
         <li class="dropdown nav-item">
           <button class="dropbtn">Movies</button>
           <div class="dropdown-content">
-            <a  class="nav-link" routerLink="movies" >Popular</a>
-            <a  class="nav-link" routerLink="movies/top-rated">Top Rated</a>
-            <a  class="nav-link" routerLink="movies/playing-now">Now Playing</a>
-            <a  class="nav-link" routerLink="movies/upcoming">Upcoming</a>
+            <a  class="nav-link" [routerLink]="['','movies']" >Popular</a>
+            <a  class="nav-link" [routerLink]="['','movies','top-rated']">Top Rated</a>
+            <a  class="nav-link" [routerLink]="['','movies','playing-now']">Now Playing</a>
+            <a  class="nav-link" [routerLink]="['','movies','upcoming']">Upcoming</a>
           </div>
         </li>
         <li class="nav-item">

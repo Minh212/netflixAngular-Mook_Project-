@@ -12,18 +12,18 @@
         <li class="dropdown nav-item">
           <button class="dropbtn">TV Shows</button>
           <div class="dropdown-content">
-            <a  class="nav-link" routerLink="tv-shows/airing-today">Airing Today</a>
-            <a  class="nav-link" routerLink="tv-shows/popular">Popular</a>
-            <a  class="nav-link" routerLink="tv-shows/top-rated">Top Rated</a>
+            <a  class="nav-link" [routerLink]="['','tv-shows','airing-today']">Airing Today</a>
+            <a  class="nav-link" [routerLink]="['','tv-shows','popular']">Popular</a>
+            <a  class="nav-link" [routerLink]="['','tv-shows','top-rated']">Top Rated</a>
           </div>
         </li>
         <li class="dropdown nav-item">
           <button class="dropbtn">Movies</button>
           <div class="dropdown-content">
-            <a  class="nav-link" routerLink="movies" >Popular</a>
-            <a  class="nav-link" routerLink="movies/top-rated">Top Rated</a>
-            <a  class="nav-link" routerLink="movies/playing-now">Now Playing</a>
-            <a  class="nav-link" routerLink="movies/upcoming">Upcoming</a>
+            <a  class="nav-link" [routerLink]="['','movies']" >Popular</a>
+            <a  class="nav-link" [routerLink]="['','movies','top-rated']">Top Rated</a>
+            <a  class="nav-link" [routerLink]="['','movies','playing-now']">Now Playing</a>
+            <a  class="nav-link" [routerLink]="['','movies','upcoming']">Upcoming</a>
           </div>
         </li>
         <li class="nav-item">
