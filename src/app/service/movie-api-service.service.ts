@@ -86,4 +86,41 @@ export class MovieApiServiceService {
     return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`);
   }
 
+    //get Tv Shows
+    getTVShowList(): Observable<any> {
+      return this.http.get(`${this.baseurl}/discover/tv?api_key=${this.apikey}`);
+    }
+
+  getAiring(): Observable<any> {
+    return this.http.get(`${this.baseurl}/tv/airing_today?api_key=${this.apikey}`);
+  }
+
+  getPopularTV(): Observable<any> {
+    return this.http.get(`${this.baseurl}/tv/popular?api_key=${this.apikey}`);
+  }
+
+  getTopRatedTV(): Observable<any> {
+    return this.http.get(`${this.baseurl}/tv/top_rated?api_key=${this.apikey}`);
+  }
+
+  getTvShowGenres(): Observable<any> {
+    return this.http.get(`${this.baseurl}/genre/tv/list?api_key=${this.apikey}`);
+  }
+
+  getTopRatedMovies(): Observable<any> {
+    return this.http.get(`${this.baseurl}/movie/top_rated?api_key=${this.apikey}`);
+  }
+  getPopularMovies(): Observable<any> {
+    return this.http.get(`${this.baseurl}/movie/popular?api_key=${this.apikey}`);
+  }
+
+  getUpcomingMovies(): Observable<any> {
+    return this.http.get(`${this.baseurl}/movie/upcoming?api_key=${this.apikey}`);
+  }
+
+  getPlayingMovies(): Observable<any> {
+    return this.http.get(`${this.baseurl}/movie/now_playing?api_key=${this.apikey}`);
+  }
 }
+
+

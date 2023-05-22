@@ -26,10 +26,5 @@ export class ActorComponent implements OnInit {
     })
   }
 
-  getMovieCast(id: any) {
-    this.service.getMovieCast(id).subscribe((result) => {
-      console.log(result, 'movieCast#');
-      this.getMovieCastResult = result.cast;
-    });
-  }
+
 }

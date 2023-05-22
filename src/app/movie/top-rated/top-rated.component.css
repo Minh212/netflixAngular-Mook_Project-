@@ -1,0 +1,162 @@
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.movie {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movie-title {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.movie-description {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.movie:hover {
+  animation: bounce 1s;
+}
+
+.carousel-inner
+{
+    height: 700px;
+}
+
+.carousel-inner .carousel-item img
+{
+    height: 700px;
+    object-fit: cover;
+}
+
+.carousel-caption h2
+{
+    color: #E50914;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.carousel-caption p
+{
+    color: #ffffff;
+}
+
+.rowposter{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.rowimg
+{
+    max-height: 100px;
+    object-fit: contain;
+    width: 100%;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    margin-right: 7px;
+}
+
+.rowimg:hover
+{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+.largeposter{
+    max-height: 300px;
+}
+
+.rowposter::-webkit-scrollbar
+{
+    display: none;
+}
+
+.navbar .navbar-brand
+{
+    color: #E50914;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link
+{
+    color: #E50914;
+}
+.rowposter {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 20px; /* Add some bottom padding for better visibility */
+    scrollbar-width: thin; /* Add scrollbar styling (optional) */
+    scrollbar-color: #E50914 transparent; /* Add scrollbar styling (optional) */
+  }
+
+  .rowimg {
+    /* Remove the margin-right property to prevent unnecessary spacing */
+    margin-right: 0;
+  }
+
+  .dropbtn {
+    background-color: transparent;
+    color: #E50914;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    background-color: transparent;
+    display: none;
+    position: absolute;
+
+    min-width: 160px;
+
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropbtn:hover {background-color: #ddd;}
+
+
+

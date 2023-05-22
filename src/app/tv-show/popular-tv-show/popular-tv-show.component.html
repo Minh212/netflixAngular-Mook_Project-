@@ -1,0 +1,69 @@
+
+<!-- navbar start  -->
+<nav class="navbar navbar-expand-lg fixed-top" >
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">Netflix FA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="dropdown nav-item">
+          <button class="dropbtn">TV Shows</button>
+          <div class="dropdown-content">
+            <a  class="nav-link" routerLink="tv-shows/airing-today">Airing Today</a>
+            <a  class="nav-link" routerLink="tv-shows/popular">Popular</a>
+            <a  class="nav-link" routerLink="tv-shows/top-rated">Top Rated</a>
+          </div>
+        </li>
+        <li class="dropdown nav-item">
+          <button class="dropbtn">Movies</button>
+          <div class="dropdown-content">
+            <a  class="nav-link" routerLink="movies" >Popular</a>
+            <a  class="nav-link" routerLink="movies/top-rated">Top Rated</a>
+            <a  class="nav-link" routerLink="movies/playing-now">Now Playing</a>
+            <a  class="nav-link" routerLink="movies/upcoming">Upcoming</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="search">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="profile">My Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="signIn">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- navbar end  -->
+<div class="contain mt-5 p-5">
+  <div class="col-md-9" style="margin-bottom: 100px; border:none;border-radius: 5px">
+      <div style="margin-top: 20px; margin-left: 320px">
+          <div class="products-right-grids">
+              <div class="sorting">
+                  <select #sort (change)="sortTVShow(sort.value)"
+                      style="width: 78% ;height: 34px;border-radius: 5px;border: 1px solid black">
+                      <option value="0"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Name A-Z</option>
+                      <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Name Z-A</option>
+                      <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Popularity Ascending</option>
+                      <option value="3"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Popularity Descending</option>
+                      <option value="4"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Release Date Ascending</option>
+                      <option value="5"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Release Date Descending</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+  </div>
+  <h5 class="text-white">Popular TV Shows</h5>
+  <div class="movie-list">
+      <div class="movie" *ngFor="let s of tvShowList">
+          <img src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}" [routerLink]="['/movie',s.id]">
+          <h3 class="movie-title">{{s.original_name}}</h3>
+          <p class="movie-description">{{s.first_air_date}}</p>
+      </div>
+  </div>
+</div>

@@ -15,6 +15,15 @@ import { SigninComponent } from './pages/sign-in/sign-in.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { ActorComponent } from './pages/actor/actor.component';
+import { TvShowComponent } from './tv-show/tv-show.component';
+import { PopularTvShowComponent } from './tv-show/popular-tv-show/popular-tv-show.component';
+import { AiringTvShowComponent } from './tv-show/airing-tv-show/airing-tv-show.component';
+import { TopRatedTvShowComponent } from './tv-show/top-rated-tv-show/top-rated-tv-show.component';
+import { PopularMovieComponent } from './movie/popular-movie/popular-movie.component';
+import { TopRatedComponent } from './movie/top-rated/top-rated.component';
+import { NowPlayingComponent } from './movie/now-playing/now-playing.component';
+import { UpcomingComponent } from './movie/upcoming/upcoming.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +34,15 @@ import { ActorComponent } from './pages/actor/actor.component';
     SigninComponent,
     ProfileComponent,
     LoadingComponent,
-    ActorComponent
+    ActorComponent,
+    TvShowComponent,
+    PopularTvShowComponent,
+    AiringTvShowComponent,
+    TopRatedTvShowComponent,
+    PopularMovieComponent,
+    TopRatedComponent,
+    NowPlayingComponent,
+    UpcomingComponent,
   ],
   imports: [
     BrowserModule,

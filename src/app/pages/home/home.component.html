@@ -1,13 +1,31 @@
 <app-loading *ngIf="loading"></app-loading>
 <!-- navbar start  -->
-<nav class="navbar navbar-expand-lg fixed-top" >
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">Netflix FA</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+        <li class="dropdown nav-item">
+          <button class="dropbtn">TV Shows</button>
+          <div class="dropdown-content">
+            <a  class="nav-link" routerLink="tv-shows/airing-today">Airing Today</a>
+            <a  class="nav-link" routerLink="tv-shows/popular">Popular</a>
+            <a  class="nav-link" routerLink="tv-shows/top-rated">Top Rated</a>
+          </div>
+        </li>
+        <li class="dropdown nav-item">
+          <button class="dropbtn">Movies</button>
+          <div class="dropdown-content">
+            <a  class="nav-link" routerLink="movies" >Popular</a>
+            <a  class="nav-link" routerLink="movies/top-rated">Top Rated</a>
+            <a  class="nav-link" routerLink="movies/playing-now">Now Playing</a>
+            <a  class="nav-link" routerLink="movies/upcoming">Upcoming</a>
+          </div>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="search">Search</a>
         </li>
@@ -15,12 +33,13 @@
           <a class="nav-link active" aria-current="page" routerLink="profile">My Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="signIn">Log out</a> 
+          <a class="nav-link active" routerLink="signIn">Log out</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<!-- navbar end  -->
 <!-- navbar end  -->
 
 <!-- banner start  -->
