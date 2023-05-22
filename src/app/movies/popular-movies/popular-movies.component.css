@@ -1,0 +1,44 @@
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .movie {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .movie-title {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .movie-description {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .movie:hover {
+    animation: bounce 1s;
+  }

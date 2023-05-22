@@ -1,0 +1,26 @@
+<div class="contain mt-0 p-5">
+    <div class="col-md-9" style="margin-bottom: 50px;margin-top: 50px; border:none;border-radius: 5px">
+        <div style="margin-top: 20px;">
+            <div  class="d-inline  p-2">
+              <select #sort (change)="sortMovies(sort.value)" title="options"
+                style="width: 30% ;height: 34px;border-radius: 5px;border: 1px solid black">
+                <option value="0"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Name A-Z</option>
+                <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Name Z-A</option>
+                <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Popularity Ascending</option>
+                <option value="3"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Popularity Descending</option>
+                <option value="4"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Release Date Ascending</option>
+                <option value="5"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sort by Release Date Descending</option>
+              </select>
+            </div>
+        </div>
+      </div>
+    
+    <h5 class="text-white">Up Coming Movies </h5>
+    <div class="movie-list">
+        <div class="movie" *ngFor="let s of moviesList">
+            <img src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}" [routerLink]="['/movie',s.id]">
+            <h3 class="movie-title">{{s.original_title}}</h3>
+            <p class="movie-description">{{s.release_date}}</p>
+        </div>
+    </div>
+</div>
